@@ -43,6 +43,7 @@ nav ul {
     gap: 40px;
     list-style: none;
     padding-bottom: 10px;
+    flex-wrap: wrap; /* supaya tidak overflow di layar kecil */
 }
 
 nav ul li a {
@@ -69,6 +70,7 @@ nav ul li a:hover {
     justify-content: center;
     gap: 40px;
     margin-bottom: 80px;
+    flex-wrap: wrap; /* agar di mobile kolom jadi stack */
 }
 
 .hero-photo {
@@ -89,6 +91,7 @@ nav ul li a:hover {
     font-family: 'Georgia', serif;
     margin: 0;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    white-space: nowrap;
 }
 
 /* Sections lainnya dibuat semi transparan */
@@ -213,5 +216,42 @@ footer {
         font-size: 48px;
         letter-spacing: 4px;
         text-align: center;
+        white-space: normal;
+    }
+}
+
+/* Tambahan responsive untuk layar kecil HP */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .hero-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    .about, .projects, .contact {
+        padding: 20px 20px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 15px 0;
     }
 }
