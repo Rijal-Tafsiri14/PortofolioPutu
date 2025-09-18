@@ -1,0 +1,217 @@
+/* Body dengan wallpaper */
+body {
+    font-family: 'Georgia', serif;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: #f2f2f2;
+    line-height: 1.6;
+    font-size: 18px;
+    padding: 40px 60px;
+    max-width: 1200px;
+    margin: auto;
+    /* Tambah overlay gelap supaya teks tetap terbaca */
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay gelap */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: 0;
+}
+
+/* Semua container agar konten di atas overlay */
+header, section, footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* Header & Nav */
+header {
+    border-bottom: 3px solid #b0413e;
+    margin-bottom: 50px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    letter-spacing: 2px;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+    transition: border-color 0.3s;
+}
+
+nav ul li a:hover {
+    border-color: #f9a19a;
+    color: #f9a19a;
+}
+
+/* Hero Section */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.hero-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #f9a19a;
+    box-shadow: 0 4px 15px rgba(249, 161, 154, 0.7);
+}
+
+.hero h1 {
+    font-size: 72px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #f9a19a;
+    font-family: 'Georgia', serif;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Sections lainnya dibuat semi transparan */
+.about, .projects, .contact {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px 40px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+/* Heading */
+.about h2, .projects h2, .contact h2 {
+    font-size: 36px;
+    font-weight: 900;
+    border-bottom: 4px solid #f9a19a;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    color: #f9a19a;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+/* Text color inside sections */
+.about p, 
+.project-list, 
+.contact p, 
+.project ul li {
+    color: #eee;
+}
+
+/* Project cards */
+.project-list {
+    column-count: 3;
+    column-gap: 40px;
+}
+
+.project {
+    background: rgba(249, 161, 154, 0.15);
+    margin-bottom: 30px;
+    padding: 20px;
+    border-left: 6px solid #f9a19a;
+    break-inside: avoid;
+    box-shadow: 0 0 10px rgba(249, 161, 154, 0.4);
+}
+
+.project h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #f9a19a;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.project ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.project ul li {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #eee;
+}
+
+/* Contact */
+.contact {
+    text-align: center;
+    border-top: 3px solid #f9a19a;
+}
+
+.contact p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f2f2f2;
+}
+
+.contact a {
+    color: #f9a19a;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid #f9a19a;
+    font-size: 16px;
+    color: #eee;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 20px 30px;
+    }
+
+    .about {
+        column-count: 1;
+    }
+
+    .project-list {
+        column-count: 1;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        letter-spacing: 4px;
+        text-align: center;
+    }
+}
