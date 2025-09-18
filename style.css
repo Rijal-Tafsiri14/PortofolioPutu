@@ -43,7 +43,7 @@ nav ul {
     gap: 40px;
     list-style: none;
     padding-bottom: 10px;
-    flex-wrap: wrap; /* supaya tidak overflow di layar kecil */
+    margin: 0;
 }
 
 nav ul li a {
@@ -70,7 +70,6 @@ nav ul li a:hover {
     justify-content: center;
     gap: 40px;
     margin-bottom: 80px;
-    flex-wrap: wrap; /* agar di mobile kolom jadi stack */
 }
 
 .hero-photo {
@@ -91,10 +90,9 @@ nav ul li a:hover {
     font-family: 'Georgia', serif;
     margin: 0;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    white-space: nowrap;
 }
 
-/* Sections lainnya dibuat semi transparan */
+/* Sections semi transparan */
 .about, .projects, .contact {
     background: rgba(0, 0, 0, 0.5);
     padding: 30px 40px;
@@ -103,7 +101,7 @@ nav ul li a:hover {
     box-shadow: 0 0 15px rgba(0,0,0,0.7);
 }
 
-/* Heading */
+/* Headings */
 .about h2, .projects h2, .contact h2 {
     font-size: 36px;
     font-weight: 900;
@@ -114,7 +112,7 @@ nav ul li a:hover {
     text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
 }
 
-/* Text color inside sections */
+/* Text colors */
 .about p, 
 .project-list, 
 .contact p, 
@@ -189,6 +187,8 @@ footer {
 }
 
 /* Responsive */
+
+/* Medium devices */
 @media screen and (max-width: 1024px) {
     body {
         padding: 20px 30px;
@@ -216,42 +216,70 @@ footer {
         font-size: 48px;
         letter-spacing: 4px;
         text-align: center;
-        white-space: normal;
     }
 }
 
-/* Tambahan responsive untuk layar kecil HP */
+/* Small devices (phones) */
 @media screen and (max-width: 600px) {
     body {
-        padding: 15px 20px;
+        padding: 15px 15px;
         font-size: 16px;
     }
 
+    /* Navbar responsive */
     nav ul {
-        gap: 20px;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
     }
 
     nav ul li a {
-        font-size: 16px;
-        letter-spacing: 1px;
+        font-size: 14px;
+        padding-bottom: 3px;
+    }
+
+    /* Hero Section stacked */
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 50px;
     }
 
     .hero-photo {
         width: 120px;
         height: 120px;
+        border-width: 4px;
+        box-shadow: 0 3px 10px rgba(249, 161, 154, 0.6);
     }
 
     .hero h1 {
-        font-size: 36px;
-        letter-spacing: 2px;
+        font-size: 32px;
+        letter-spacing: 3px;
+        text-align: center;
+        white-space: normal;
+        margin: 0;
+        padding: 0 10px;
+        line-height: 1.2;
     }
 
+    /* Sections padding dan font lebih kecil */
     .about, .projects, .contact {
-        padding: 20px 20px;
+        padding: 20px 15px;
+        font-size: 15px;
+        margin-bottom: 40px;
     }
 
-    footer {
+    /* Headings lebih kecil */
+    .about h2, .projects h2, .contact h2 {
+        font-size: 28px;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+    }
+
+    /* List font lebih kecil */
+    .project ul li {
         font-size: 14px;
-        padding: 15px 0;
+        line-height: 1.4;
     }
 }
